@@ -9,7 +9,7 @@ foreach ($resource in $resources)
 {
 
     $filename = ($pwd).path+"/"+$resource.ResourceGroupName+"/"+$resource.Name+".json"
-    Export-AzResourceGroup -ResourceGroupName $resource.ResourceGroupName -Resource $resource.ResourceId -Path $filename
+    Export-AzResourceGroup -ResourceGroupName $resource.ResourceGroupName -Resource $resource.ResourceId -Path $filename -Force
     $customPsObject = New-Object -TypeName PsObject
     $subscription = Get-AzSubscription -SubscriptionName $SubscriptionName
     $tags = $resource.Tags.Keys + $resource.Tags.Values -join ':'
