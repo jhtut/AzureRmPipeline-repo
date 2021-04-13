@@ -1,0 +1,9 @@
+"Subscription","ResourceName","ResourceGroup","Location","ResourceType","Tags","Sku"
+"Pay-As-You-Go","TestGithubPlan","AzureRmPipeline-rg","australiaeast","Microsoft.Web/serverFarms","","Microsoft.Azure.Management.ResourceManager.Models.Sku"
+"Pay-As-You-Go","TestGithubWebApp","AzureRmPipeline-rg","australiaeast","Microsoft.Web/sites","",
+"Pay-As-You-Go","cs1100320011af67746","cloud-shell-storage-southeastasia","southeastasia","Microsoft.Storage/storageAccounts","ms-resource-usage:azure-cloud-shell","Microsoft.Azure.Management.ResourceManager.Models.Sku"
+"Pay-As-You-Go","autoacc","RG-1","eastus","Microsoft.Automation/automationAccounts","",
+"Pay-As-You-Go","autoacc/AzureAutomationTutorial","RG-1","eastus","Microsoft.Automation/automationAccounts/runbooks","",
+"Pay-As-You-Go","autoacc/AzureAutomationTutorialPython2","RG-1","eastus","Microsoft.Automation/automationAccounts/runbooks","",
+"Pay-As-You-Go","autoacc/AzureAutomationTutorialScript","RG-1","eastus","Microsoft.Automation/automationAccounts/runbooks","",
+"Pay-As-You-Go","autoacc/test","RG-1","eastus","Microsoft.Automation/automationAccounts/runbooks","",
