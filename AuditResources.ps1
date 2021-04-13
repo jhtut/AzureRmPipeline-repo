@@ -1,3 +1,6 @@
+git config --global user.email 'joe.htut@gmail.com'
+git config --global user.name 'Joe Htut'
+git checkout
 $allResources = @()
 $SubscriptionName = "Pay-As-You-Go"
 Select-AzSubscription -SubscriptionName $SubscriptionName
@@ -20,8 +23,6 @@ foreach ($resource in $resources)
     $allResources += $customPsObject
 }
 $allResources | Export-Csv .\resource-audit.csv -NoTypeInformation
-git config --global user.email 'joe.htut@gmail.com'
-git config --global user.name 'Joe Htut'
 git add --all 
 git diff --quiet && git diff --staged --quiet || git commit -am '[skip ci] commit from CI runner"'
-git push origin main
+git push origin HEAD:main
