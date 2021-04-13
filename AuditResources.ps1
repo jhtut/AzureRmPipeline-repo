@@ -8,7 +8,7 @@ $resources = Get-AzResource
 foreach ($resource in $resources)
 {
 
-    $filename = ".\"+$resource.ResourceGroupName+"\"+$resource.Name+".json"
+    $filename = ($pwd).path+"/"+$resource.ResourceGroupName+"/"+$resource.Name+".json"
     Export-AzResourceGroup -ResourceGroupName $resource.ResourceGroupName -Resource $resource.ResourceId -Path $filename
     $customPsObject = New-Object -TypeName PsObject
     $subscription = Get-AzSubscription -SubscriptionName $SubscriptionName
@@ -22,7 +22,7 @@ foreach ($resource in $resources)
     $customPsObject | Add-Member -MemberType NoteProperty -Name Sku -Value $resource.Sku
     $allResources += $customPsObject
 }
-$allResources | Export-Csv .\resource-audit.csv -NoTypeInformation
+$allResources | Export-Csv ./resource-audit.csv -NoTypeInformation
 git add --all 
 git diff --quiet && git diff --staged --quiet || git commit -am '[skip ci] commit from CI runner"'
 git push origin HEAD:main
