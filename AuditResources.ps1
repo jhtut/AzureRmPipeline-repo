@@ -24,4 +24,4 @@ git config --global user.email 'joe.htut@gmail.com'
 git config --global user.name 'Joe Htut'
 git add --all 
 git diff --quiet && git diff --staged --quiet || git commit -am '[skip ci] commit from CI runner"'
-git push https://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@github.com/jhtut/AzureRmPipeline-repo.git HEAD:main
+git push origin
