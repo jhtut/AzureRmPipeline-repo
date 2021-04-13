@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "automationAccounts_autoacc_name": {
+      "type": "String"
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Automation/automationAccounts/runbooks",
+      "apiVersion": "2019-06-01",
+      "name": "[concat(parameters('automationAccounts_autoacc_name'), '/AzureAutomationTutorialPython2')]",
+      "location": "eastus",
+      "properties": {
+        "description": " An example runbook which gets all the ARM resources using the Run As Account (Service Principal).",
+        "logVerbose": false,
+        "logProgress": false,
+        "logActivityTrace": 0,
+        "runbookType": "Python2"
+      }
+    }
+  ]
+}
