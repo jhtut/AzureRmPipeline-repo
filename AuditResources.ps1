@@ -10,11 +10,11 @@ $allResources = @()
 $Subscription = Get-AzContext
 $SubscriptionName = $Subscription.Subscription.Name
 
-# Delete existing folder 
-Remove-Item -LiteralPath $SubscriptionName -Force -Recurse
-
-# Create Subscription folder if it doesn't exist
-New-Item -ItemType Directory -Force -Path $SubscriptionNam
+# Delete existing folder if exists
+If(!(Test-Path -path $SubscriptionName))
+{
+    Remove-Item -LiteralPath $SubscriptionName -Force -Recurse
+}
 
 # Get all the resources under subscription
 $resources = Get-AzResource
