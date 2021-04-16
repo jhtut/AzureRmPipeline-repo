@@ -19,6 +19,9 @@ $resources = Get-AzResource
 foreach ($resource in $resources)
 {
     $filename = ($pwd).path+"/"+$SubscriptionName+"/"+$resource.ResourceGroupName+"/"+$resource.Name+".json"
+    $filename = $filename.Replace(' ' , '_')
+    $filename = $filename.Replace('[' , '_')
+    $filename = $filename.Replace(']' , '_')
     Export-AzResourceGroup -ResourceGroupName $resource.ResourceGroupName -Resource $resource.ResourceId -Path $filename -Force
     $customPsObject = New-Object -TypeName PsObject
     $subscription = Get-AzSubscription -SubscriptionName $SubscriptionName
