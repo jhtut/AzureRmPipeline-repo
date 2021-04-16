@@ -2,13 +2,15 @@ git config --global user.email 'joe.htut@gmail.com'
 git config --global user.name 'Joe Htut'
 git checkout
 $allResources = @()
-$SubscriptionName = "Pay-As-You-Go"
-Select-AzSubscription -SubscriptionName $SubscriptionName
+#$SubscriptionName = "Pay-As-You-Go"
+#Select-AzSubscription -SubscriptionName $SubscriptionName
+$Subscription = Get-AzContext
+$SubscriptionName = $Subscription.Subscription.Name
 $resources = Get-AzResource
 foreach ($resource in $resources)
 {
 
-    $filename = ($pwd).path+"/"+$resource.ResourceGroupName+"/"+$resource.Name+".json"
+    $filename = ($pwd).path+"/"+$SubscriptionName+"/"+$resource.ResourceGroupName+"/"+$resource.Name+".json"
     Export-AzResourceGroup -ResourceGroupName $resource.ResourceGroupName -Resource $resource.ResourceId -Path $filename -Force
     $customPsObject = New-Object -TypeName PsObject
     $subscription = Get-AzSubscription -SubscriptionName $SubscriptionName
