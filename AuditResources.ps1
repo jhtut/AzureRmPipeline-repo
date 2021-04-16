@@ -1,15 +1,23 @@
+# Prepare Git
 git config --global user.email 'joe.htut@gmail.com'
 git config --global user.name 'Joe Htut'
 git checkout
+
+# Declare variable for CSV files
 $allResources = @()
-#$SubscriptionName = "Pay-As-You-Go"
-#Select-AzSubscription -SubscriptionName $SubscriptionName
+
+# Get Subscription Name
 $Subscription = Get-AzContext
 $SubscriptionName = $Subscription.Subscription.Name
+
+# Delete existing folder 
+Remove-Item -LiteralPath $SubscriptionName -Force -Recurse
+
+# Get all the resources under subscription
 $resources = Get-AzResource
+
 foreach ($resource in $resources)
 {
-
     $filename = ($pwd).path+"/"+$SubscriptionName+"/"+$resource.ResourceGroupName+"/"+$resource.Name+".json"
     Export-AzResourceGroup -ResourceGroupName $resource.ResourceGroupName -Resource $resource.ResourceId -Path $filename -Force
     $customPsObject = New-Object -TypeName PsObject
@@ -24,7 +32,11 @@ foreach ($resource in $resources)
     $customPsObject | Add-Member -MemberType NoteProperty -Name Sku -Value $resource.Sku
     $allResources += $customPsObject
 }
+
+# Export Resources details to csv file
 $allResources | Export-Csv ./resource-audit.csv -NoTypeInformation
+
+# Commit files to Git
 git add --all 
 git diff --quiet && git diff --staged --quiet || git commit -am '[skip ci] commit from CI runner"'
 git push origin HEAD:main
