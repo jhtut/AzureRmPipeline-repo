@@ -11,7 +11,7 @@ $Subscription = Get-AzContext
 $SubscriptionName = $Subscription.Subscription.Name
 
 # Delete existing folder if exists
-If(!(Test-Path -path $SubscriptionName))
+If(Test-Path -path $SubscriptionName)
 {
     Remove-Item -LiteralPath $SubscriptionName -Force -Recurse
 }
