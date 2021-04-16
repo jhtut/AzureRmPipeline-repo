@@ -3,5 +3,4 @@
 "Pay-As-You-Go","NetworkWatcher_eastus","NetworkWatcherRG","eastus","Microsoft.Network/networkWatchers","",
 "Pay-As-You-Go","NetworkWatcher_southeastasia","NetworkWatcherRG","southeastasia","Microsoft.Network/networkWatchers","",
 "Pay-As-You-Go","vnet-1","RG-1","eastus","Microsoft.Network/virtualNetworks","",
-"Pay-As-You-Go","vnet-2","RG-1","southeastasia","Microsoft.Network/virtualNetworks","",
 "Pay-As-You-Go","vnet-2","RG-2","eastus","Microsoft.Network/virtualNetworks","",
