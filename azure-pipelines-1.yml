@@ -9,8 +9,8 @@ schedules:
     include:
     - main
 
-trigger:
-- main
+#trigger:
+#- main
 
 pool:
   vmImage: ubuntu-latest
