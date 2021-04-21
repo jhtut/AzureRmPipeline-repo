@@ -2,16 +2,16 @@
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
-schedules:
-- cron: "0 1 * * *"
-  displayName: Daily 1am build
-  branches:
-    include:
-    - main
-  always: true
+#schedules:
+#- cron: "0 1 * * *"
+#  displayName: Daily 1am build
+#  branches:
+#    include:
+#    - main
+#  always: true
 
-#trigger:
-#- main
+trigger:
+- main
 
 pool:
   vmImage: ubuntu-latest
