@@ -40,7 +40,7 @@ foreach ($resource in $resources)
 }
 
 # Export Resources details to csv file
-$allResources | Export-Csv ./resource-audit.csv -NoTypeInformation
+$allResources | Export-Csv ./$SubscriptionName.csv -NoTypeInformation
 
 # Commit files to Git
 git add --all 
