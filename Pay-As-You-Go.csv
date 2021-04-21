@@ -1,0 +1,6 @@
+"Subscription","ResourceGroup","ResourceName","ResourceType","Location","Tags","Sku"
+"Pay-As-You-Go","cloud-shell-storage-southeastasia","cs1100320011af67746","Microsoft.Storage/storageAccounts","southeastasia","ms-resource-usage:azure-cloud-shell","Microsoft.Azure.Management.ResourceManager.Models.Sku"
+"Pay-As-You-Go","NetworkWatcherRG","NetworkWatcher_eastus","Microsoft.Network/networkWatchers","eastus","",
+"Pay-As-You-Go","NetworkWatcherRG","NetworkWatcher_southeastasia","Microsoft.Network/networkWatchers","southeastasia","",
+"Pay-As-You-Go","RG-1","vnet-1","Microsoft.Network/virtualNetworks","eastus","",
+"Pay-As-You-Go","RG-2","vnet-2","Microsoft.Network/virtualNetworks","eastus","",
