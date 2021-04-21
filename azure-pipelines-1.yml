@@ -3,8 +3,8 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 schedules:
-- cron: "*/5 * * * *"
-  displayName: Daily midnight build
+- cron: "0 1 * * *"
+  displayName: Daily 1am build
   branches:
     include:
     - main
